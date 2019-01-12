@@ -1,0 +1,12 @@
+[Unit]
+Description=Tunnel WG UDP over websocket
+After=network.target
+
+[Service]
+Type=simple
+User=nobody
+ExecStart=/usr/local/bin/wstunnel -q --server ws://127.0.0.1:33344 --restrictTo=127.0.0.1:51820
+Restart=no
+
+[Install]
+WantedBy=multi-user.target

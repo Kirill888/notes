@@ -159,7 +159,7 @@ wstunnel --server ws://127.0.0.1:33344 --restrictTo=127.0.0.1:51820
 You probably want to make this auto-start on your server:
 
 <details><summary>wstunnel: Systemd Service File</summary><div markdown="1">
-Copy to `/etc/systemd/system/`
+Copy to `/etc/systemd/system/wstunnel.service`
 
 ```ini
 [Unit]
@@ -188,7 +188,7 @@ shouldn't be visible to any middleman. You also get access logs and proper TLS
 (`wstunnel` only has one hard-coded certificate).
 
 
-## Configure wg-quick to use Tunnel
+## Configure wg-quick to use UDP Tunnel
 
 Copy `wg0.conf` into `wg1.conf` and make this change
 
@@ -283,6 +283,10 @@ Don't run `wstunnel` as `root`, systemd file above launches `wstunnel` as `nobod
 
 Make sure that `wstunnel` on a client side listens on `localhost` only, and
 doesn't run as `root`.
+
+Make sure files under `/etc/wireguard/` are accessible by `root` only,
+`wg-quick` runs as `root` and so is `wstunnel.sh`, and it sources `wg1.wstunnel`
+as `root` also, so make sure they are not writable by anyone except `root`.
 
 
 ## Notes on Debugging

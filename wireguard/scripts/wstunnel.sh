@@ -79,6 +79,7 @@ launch_wstunnel () {
     local lport=${LOCAL_PORT:-${rport}}
     local prefix=${WS_PREFIX:-"wstunnel"}
     local user=${1:-"nobody"}
+    local timeout=${TIMEOUT:-"-1"}
     local cmd
 
     cmd=$(command -v wstunnel)
@@ -86,6 +87,7 @@ launch_wstunnel () {
 
     $cmd >/dev/null 2>&1 </dev/null \
       --quiet \
+      --udpTimeoutSec "${timeout}" \
       --upgradePathPrefix "${prefix}" \
       --udp  -L "127.0.0.1:${lport}:127.0.0.1:${rport}" \
       "wss://${host}" & disown

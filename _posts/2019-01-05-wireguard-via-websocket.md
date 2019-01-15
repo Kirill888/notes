@@ -97,7 +97,7 @@ destined to a localhost and wireguard port.
 Client will run this:
 
 ```
-wstunnel -v --udp -L 127.0.0.1:51820:127.0.0.1:51820 wss://yourhost.tld/
+wstunnel -v --udp --udpTimeoutSec -1 -L 127.0.0.1:51820:127.0.0.1:51820 wss://yourhost.tld/
 ```
 
 This will listen on port `51820` on localhost only and forward these packets to

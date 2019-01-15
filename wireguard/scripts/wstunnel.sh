@@ -141,6 +141,9 @@ post_up () {
 
     route -q -n add -inet 0.0.0.0/1 -interface "${tun}" > /dev/null 2>&1
     route -q -n add -inet 128.0.0.0/1 -interface "${tun}" > /dev/null 2>&1
+
+    route -q -n add -inet6 ::/1 -interface "${tun}" > /dev/null 2>&1
+    route -q -n add -inet6 8000::/1 -interface "${tun}" > /dev/null 2>&1
 }
 
 post_down () {

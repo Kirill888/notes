@@ -83,7 +83,7 @@ unique address, and different from that of a server.
 1. Head over to [wstunnel releases](https://github.com/erebe/wstunnel/releases/) and download linux version for your server
 2. Compile mac version yourself, not currently available from releases page
    - Alternative is to run Linux version in docker
-   - Download binary I have [compiled](https://github.com/Kirill888/notes/releases/)
+   - Or download binary I have [compiled](https://github.com/Kirill888/notes/releases/tag/wg-tunnel-update)
 
 On a server we run
 
@@ -266,7 +266,7 @@ do is `sudo wg-quick up wg1`. Behind the scenes `wstunnel.sh` will:
 Currently Wi-Fi disconnects are likely to cause non-recoverable errors and will
 require bringing wireguard interface down and then back up manually. This is
 because route to the server is set up once and is not updated as you connect to
-a new hotspot with possibly different gateway.
+a new router with possibly different gateway.
 
 I have only needed this on MacOS, Linux client will be very similar, but will
 likely need some changes here and there.

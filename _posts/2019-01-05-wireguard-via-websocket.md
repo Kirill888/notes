@@ -219,7 +219,7 @@ If at this point you try `wg-quick up wg1`, things won't work for the following 
    - Option 3: run `dnsmasq` on client side, configure `dnsmasq` rather than `/etc/hosts`
 
 I have written
-[this script](https://github.com/Kirill888/notes/blob/b8cb9d652a2d3558f75d7ce7b7d44817f0b0f997/wireguard/scripts/wstunnel.sh)
+[this script](https://github.com/Kirill888/notes/blob/wg-tunnel-update/wireguard/scripts/wstunnel.sh)
 that helps with setting up correct routes, launching `wstunnel` and updating `/etc/hosts`. To use it copy it to `/etc/wireguard/` directory and add the following to your `[Interface]` section of `wg1.conf`
 
 ```diff

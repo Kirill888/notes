@@ -80,10 +80,8 @@ unique address, and different from that of a server.
 
 ## UDP Tunnel
 
-1. Head over to [wstunnel releases](https://github.com/erebe/wstunnel/releases/) and download linux version for your server
-2. Compile mac version yourself, not currently available from releases page
-   - Alternative is to run Linux version in docker
-   - Or download binary I have [compiled](https://github.com/Kirill888/notes/releases/tag/wg-tunnel-update)
+Head over to [wstunnel releases](https://github.com/erebe/wstunnel/releases/)
+and download linux version for your server and MacOS version for the client.
 
 On a server we run
 
